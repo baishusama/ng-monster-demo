@@ -49,7 +49,7 @@ ng build ng-monster
 ```
 ng build ng-monster --prod
 cd dist/ng-monster
-npm whoami  # check npm account
+npm whoami  # check npm account; need `npm login` first
 npm publish
 ```
 
