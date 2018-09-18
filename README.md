@@ -38,11 +38,24 @@ ng g c toaster --project=ng-monster
     - `NmToasterModule`
     - `NmToasterComponent`
 
-## Build
+## Build for Test
 
 ```
 ng build ng-monster
 ```
+
+## Build for Publish
+
+```
+ng build ng-monster --prod
+cd dist/ng-monster
+npm whoami  # check npm account
+npm publish
+```
+
+## Use
+
+> TODO: 目前只是占了个 npm 的坑。。
 
 在 `src/app/app.module` 引入：
 
