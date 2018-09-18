@@ -48,6 +48,8 @@ ng build ng-monster
 
 ## Build for Publish
 
+> 注意：每次打包之前需要更新一下 `package.json` 中的版本号
+
 ```
 ng build ng-monster --prod
 cd dist/ng-monster
