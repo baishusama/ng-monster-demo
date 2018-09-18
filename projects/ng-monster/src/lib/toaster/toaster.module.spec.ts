@@ -1,13 +1,13 @@
-import { ToasterModule } from './toaster.module';
+import { NmToasterModule } from './toaster.module';
 
-describe('ToasterModule', () => {
-  let toasterModule: ToasterModule;
+describe('NmToasterModule', () => {
+  let NmToasterModule: NmToasterModule;
 
   beforeEach(() => {
-    toasterModule = new ToasterModule();
+    NmToasterModule = new NmToasterModule();
   });
 
   it('should create an instance', () => {
-    expect(toasterModule).toBeTruthy();
+    expect(NmToasterModule).toBeTruthy();
   });
 });

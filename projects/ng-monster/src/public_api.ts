@@ -6,3 +6,4 @@
 // export * from './lib/ng-monster.component';
 // export * from './lib/ng-monster.module';
 export * from './lib/toaster/toaster.module';
+export * from './lib/toaster/toaster.service';

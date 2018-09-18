@@ -1,3 +1,22 @@
-<div class="nm-toaster-shadow"></div>
+<!-- <div class="nm-toaster-shadow"></div>
+<div class="nm-toaster-content">toaster works!</div> -->
 
-<div class="nm-toaster-content">toaster works!</div>
+<div
+    *ngIf="toastrs.length !== 0"
+    id="toast-container"
+    class="toast-top-right"
+    aria-live="polite"
+    role="alert"
+>
+    <div
+        *ngFor="let toastr of toastrs"
+        class="toast"
+        [ngStyle]="{
+            'opacity': toastr.opacity
+        }"
+        [ngClass]="'toast-' + toastr.type"
+    >
+        <div class="toast-message">{{ toastr.title }}</div>
+        <div class="toast-message">{{ toastr.msg }}</div>
+    </div>
+</div>

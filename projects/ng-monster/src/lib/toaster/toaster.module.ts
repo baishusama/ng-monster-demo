@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ToasterComponent } from './toaster.component';
+
+import { NmToasterComponent } from './toaster.component';
+import { NmToasterService } from './toaster.service';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [ToasterComponent],
-  exports: [ToasterComponent]
+  declarations: [NmToasterComponent],
+  exports: [NmToasterComponent],
+  providers: [NmToasterService]
 })
-export class ToasterModule {}
+export class NmToasterModule {}

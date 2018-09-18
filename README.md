@@ -44,6 +44,8 @@ ng g c toaster --project=ng-monster
 ng build ng-monster
 ```
 
+由于 [library 暂不支持 `--watch` 选项](https://github.com/angular/angular-cli/issues/11100)，所以修改 lib 以后只能手动 build。。
+
 ## Build for Publish
 
 ```
@@ -60,7 +62,7 @@ npm publish
 在 `src/app/app.module` 引入：
 
 ```
-import { ToasterModule } from 'ng-monster';
+import { NmToasterModule } from 'ng-monster';
 ```
 
 ## Reference
