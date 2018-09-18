@@ -1,0 +1,29 @@
+:host {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.nm-toaster-shadow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.nm-toaster-content {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  padding: 1rem 1.6rem;
+  width: 200px;
+  background-color: yellowgreen;
+  color: #fff;
+}

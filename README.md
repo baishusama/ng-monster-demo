@@ -1,27 +1,57 @@
 # NgMonsterDemo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+## Initialize
 
-## Development server
+```
+ng new ng-monster-demo --routing --prefix nm --style=scss
+cd ng-monster-demo
+ng g library ng-monster --prefix nm --style=scss
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+> - 问题：`ng g library` 的时候指定 `--style=scss` 目前似乎不起作用。
+> - 对策：可以手动复制粘贴 `angular.json` 中的 `ng-monster-demo` 下的样式设置（如下所示）到 `ng-monster` 下。
+>
+> ```json
+> "schematics": {
+>   "@schematics/angular:component": {
+>     "styleext": "scss"
+>   }
+> },
+> ```
 
-## Code scaffolding
+## Develop
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+新建一个组件特性模块：
+
+```
+ng g m toaster --project=ng-monster
+ng g c toaster --project=ng-monster
+```
+
+> TODO: 这里添加一下 `--export` 参数更方便
+
+目前一些需要手动的步骤：
+
+1. 手动在特性模块中 `exports` 组件
+2. 在 `public_api.ts` 中暴露特性模块中所有内容
+3. 全局替换为 `class` 名添加 `Nm` 前缀
+    - `NmToasterModule`
+    - `NmToasterComponent`
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+ng build ng-monster
+```
 
-## Running unit tests
+在 `src/app/app.module` 引入：
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+import { ToasterModule } from 'ng-monster';
+```
 
-## Running end-to-end tests
+## Reference
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- [Library support in Angular CLI 6](https://github.com/angular/angular-cli/wiki/stories-create-library)
+- [`ng g library`](https://github.com/angular/angular-cli/wiki/generate-library)
+- [How to build a library for Angular apps?](https://medium.com/@tomsu/how-to-build-a-library-for-angular-apps-4f9b38b0ed11)
